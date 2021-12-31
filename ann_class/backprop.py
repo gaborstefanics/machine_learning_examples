@@ -121,8 +121,8 @@ def main():
         T[i, Y[i]] = 1
 
     # let's see what it looks like
-    plt.scatter(X[:,0], X[:,1], c=Y, s=100, alpha=0.5)
-    plt.show()
+    # plt.scatter(X[:,0], X[:,1], c=Y, s=100, alpha=0.5)
+    # plt.show()
 
     # randomly initialize weights
     W1 = np.random.randn(D, M)
@@ -130,9 +130,9 @@ def main():
     W2 = np.random.randn(M, K)
     b2 = np.random.randn(K)
 
-    learning_rate = 1e-3
+    learning_rate = 10e-7
     costs = []
-    for epoch in range(1000):
+    for epoch in range(100000):
         output, hidden = forward(X, W1, b1, W2, b2)
         if epoch % 100 == 0:
             c = cost(T, output)
@@ -157,7 +157,7 @@ def main():
 
     plt.plot(costs)
     plt.show()
-
+    print(len(costs))
 
 if __name__ == '__main__':
     main()

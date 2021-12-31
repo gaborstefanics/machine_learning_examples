@@ -153,8 +153,8 @@ def test_donut():
 
 
 if __name__ == '__main__':
-    test_xor()
-    # test_donut()
+    # test_xor()
+    test_donut()
 
     
 
